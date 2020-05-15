@@ -11,7 +11,7 @@ class Database {
 			database: "logrocket_deno",
 			host: "localhost",
 			password: "postgres",
-			port: "5432"
+			port: 5432
 		});
 
 		await this.client.connect();
