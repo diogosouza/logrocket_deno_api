@@ -9,7 +9,7 @@ class Database {
 		this.client = new Client({
 			user: "postgres",
 			database: "logrocket_deno",
-			host: "localhost",
+			hostname: "localhost",
 			password: "postgres",
 			port: 5432
 		});
