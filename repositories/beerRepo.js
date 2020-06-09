@@ -20,29 +20,13 @@ class BeerRepo {
 	}
 
 	update(id, beer) {
-		var query = `UPDATE beers `;
-		var hasSet = false;
-		if (beer.name !== undefined) {
-			query +=
-				` SET name = '${beer.name}'` + (beer.brand !== undefined ? "," : "");
-			hasSet = true;
-		}
+		var latestBeer = this.selectById(id);
+		var query = `UPDATE beers SET name = $1, brand = $2, is_premium = $3 WHERE id = $4`;
 
-		if (beer.brand !== undefined) {
-			if (!hasSet) query += " SET ";
-			query +=
-				` brand = '${beer.brand}'` + (beer.is_premium !== undefined ? "," : "");
-			hasSet = true;
-		}
-
-		if (beer.is_premium !== undefined) {
-			if (!hasSet) query += " SET ";
-			query += ` is_premium = '${beer.is_premium}'`;
-		}
-
-		query += ` WHERE id = ${id}`;
-		
-		return client.query(query);
+		return client.query(query,
+			beer.name !== undefined ? beer.name : latestBeer.name,
+			beer.brand !== undefined ? beer.brand : latestBeer.brand,
+			beer.is_premium !== undefined ? beer.is_premium : latestBeer.is_premium, id);
 	}
 
 	delete(id) {

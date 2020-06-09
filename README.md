@@ -1,10 +1,12 @@
 # logrocket_deno_api
 A functional CRUD-like API with Deno and Postgres
 
-In order to run it, just install [Deno](https://deno.land/) to your machine, enter the root folder of this project, and run the following command:
+This project was developed to work with Deno [1.0.0](https://github.com/denoland/deno/releases/tag/v1.0.0). Newer versions can bring inconsistencies to the project.
 
-```
-deno run --allow-net index.js
+You can use this [link](https://deno.land/x/install/) to install a specific version of [Deno](https://deno.land/) to your machine. Then, enter the root folder of this project, and run the following command:
+
+```shell
+deno run --allow-net --allow-env index.js
 ```
 
-Don't forget to have Postgres up and running and creating the table stated at `db/create.sql`.
+Don't forget to have Postgres up and running and creating the table at `db/create.sql`.
