@@ -1,5 +1,6 @@
-# logrocket_deno_api
-A functional CRUD-like API with Deno and Postgres
+# A functional CRUD-like API with Deno and Postgres
+
+This is the source code for my article: [Creating your first REST API with Deno and Postgres](https://blog.logrocket.com/creating-your-first-rest-api-with-deno-and-postgres/).
 
 > This project was developed to work with Deno [1.0.0](https://github.com/denoland/deno/releases/tag/v1.0.0). Newer versions can bring inconsistencies to the project.
 
